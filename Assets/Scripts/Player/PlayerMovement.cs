@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
+        var gravity = Physics.gravity;
+        gravity.y = flip.currentGravity;
         rb.velocity = new Vector2(_input.horizontalInput * moveSpeed, flip.currentGravity);
     }
 }

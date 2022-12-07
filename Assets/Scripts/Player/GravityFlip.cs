@@ -12,7 +12,7 @@ public class GravityFlip : MonoBehaviour
     private float upGravity = 9.81f;
     public float currentGravity;
 
-    private bool normGravity;
+    public bool normGravity;
     
     void Start()
     {
@@ -28,10 +28,5 @@ public class GravityFlip : MonoBehaviour
             normGravity = !normGravity;
         }
         currentGravity = normGravity ? downGravity : upGravity;
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 }
