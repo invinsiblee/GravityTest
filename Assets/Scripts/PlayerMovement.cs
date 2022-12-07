@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private GravityFlip flip;
     
     [SerializeField] 
-    private float moveSpeed = 10f;
+    private float moveSpeed = 4f;
     
     void Start()
     {
@@ -25,6 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        rb.velocity = new Vector2(_input.horizontalInput, flip.currentGravity).normalized * moveSpeed;
+        rb.velocity = new Vector2(_input.horizontalInput * moveSpeed, flip.currentGravity);
     }
 }

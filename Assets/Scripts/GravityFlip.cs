@@ -32,7 +32,6 @@ public class GravityFlip : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var transformLocalPosition = transform.localPosition;
-        transformLocalPosition.y -= currentGravity;
+        
     }
 }
