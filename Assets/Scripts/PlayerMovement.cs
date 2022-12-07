@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private PlayerInput _input;
+    private Rigidbody rb;
+    private GravityFlip flip;
+    
+    [SerializeField] 
+    private float moveSpeed = 10f;
+    
     void Start()
     {
-        
+        _input = GetComponent<PlayerInput>();
+        rb = GetComponent<Rigidbody>();
+        flip = GetComponent<GravityFlip>();
+    }
+    
+    private void FixedUpdate()
+    {
+        Movement();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Movement()
     {
-        
+        rb.velocity = new Vector2(_input.horizontalInput, flip.currentGravity).normalized * moveSpeed;
     }
 }
